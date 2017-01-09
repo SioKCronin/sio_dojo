@@ -1,6 +1,6 @@
 # Study
 
-My studies are organized in the following umbrella arenas:
+My studies are organized under the following umbrellas:
 
 * philosopy of mind
 * machine learning
