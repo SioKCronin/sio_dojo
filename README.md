@@ -2,7 +2,7 @@
 
 My studies are organized under the following umbrellas:
 
-* philosopy of mind
+* math
 * machine learning
 * inference
 * form and movement in complex systems  
