@@ -2,10 +2,10 @@
 
 My studies are organized under the following umbrellas:
 
-* math
+* philosopy of mind
 * machine learning
 * inference
-* form and movement in complex systems  
+* math / form and movement in complex systems  
 
 I am engaged in a multiple year "nerd up" on foundational knowledge, as I prepare for greater service in AI and machine learning engineering. 
 
