@@ -4,13 +4,13 @@
 
 My studies fall under the following umbrellas:
 
-* geometry
+* core math
 * physics 
-* CS
+* core cs/algorithms
 * ML/AI
 * inference
-* form and movement in complex systems  
+* form and movement in complex systems (complexity, geometry)  
 
-I am engaged in a multiple year "nerd up" on foundational knowledge in these areas, as I prepare for greater service in AI and machine learning engineering. 
+I am engaged in a multiple year nerd-up in these areas, as I prepare for greater service in ML/AI.  
 
-This repo includes my study notes, and lit reviews can be found on my blog. 
+This repo includes my study notes. Lit reviews can be found on my blog. 
