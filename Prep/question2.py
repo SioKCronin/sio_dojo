@@ -5,7 +5,19 @@ Your function definition should look like question2(a), and return a string.
 '''
 
 def question2(a):
-    pass
+    def is_palindrome(x):
+        output = []
+        i = 1
+        while l[x-i] == l[x+i]:
+            output = l[x-i:x+i]
+
+    def test_longest_palindrome(a):
+        output = []
+
+        for x in a:
+            output.append(is_palindrome(x)):
+        return str(max(output))
+
 
 class TestQuestion2(unittest.TestCase):
 
