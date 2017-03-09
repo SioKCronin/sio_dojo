@@ -3,21 +3,23 @@
 Given a string a, find the longest palindromic substring contained in a.
 Your function definition should look like question2(a), and return a string.
 '''
+import unittest
 
 def question2(a):
-    def is_palindrome(x):
-        output = []
-        i = 1
-        while l[x-i] == l[x+i]:
-            output = l[x-i:x+i]
-
-    def test_longest_palindrome(a):
-        output = []
-
-        for x in a:
-            output.append(is_palindrome(x)):
-        return str(max(output))
-
+    output = []
+    i = 1
+    for x in range((len(a)+1)):
+        if a[x-i] == a[x]:
+            if len(a[x-i:x]) > output:
+                output = a[x-i:x]
+        if a[x-i] == a[x+i]:
+            while a[x-i] == a[x+i]:
+                if len(a[x-i:x]) > output:
+                    output = a[x-i:x]
+                i += 1
+        else:
+            output = output
+    return output
 
 class TestQuestion2(unittest.TestCase):
 
@@ -30,4 +32,6 @@ class TestQuestion2(unittest.TestCase):
         self.assertEqual(question2("24graba67b9"), "aba")
         self.assertEqual(question2("aa"), "aa")
 
+if __name__ == '__main__':
+    unittest.main()
 

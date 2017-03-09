@@ -49,6 +49,21 @@ class TestQuestion3(unittest.TestCase):
                 'C': [('B', 5)]}
         self.assertEqual(question3(tree), tree)
 
+    def test_broad_tree(self):
+        input_tree = {'A': [('B', 2)],
+                      'B': [('A', 2), ('C', 5), ('D', 3)],
+                      'C': [('B', 5), ('D', 1), ('E', 2)],
+                      'D': [('B', 3), ('C', 1)],
+                      'E': [('C', 2)]}
+
+        output_tree = {'A': [('B', 2)],
+                       'B': [('A', 2), ('D', 3)],
+                       'C': [('D', 1), ('E', 2)],
+                       'D': [('B', 3), ('C', 1)],
+                       'E': [('C', 2)]}
+
+        self.assertEqual(question3(input_tree),output_tree)
+
 if __name__ == '__main__':
     unittest.main()
 
