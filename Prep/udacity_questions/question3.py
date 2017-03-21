@@ -1,6 +1,7 @@
 # Question 3
 
 import unittest
+import pprint
 from collections import defaultdict
 import bisect
 
@@ -16,26 +17,31 @@ total weight of edges. Your function should take in and return an adjacency list
 def sorted_edge_weights(graph):
     edges = set()
     for n1 in graph:
-        for link in graph[n1]:
-            n2 = link[0]
-            weight = link[1]
-            node_pair = tuple(sorted((n1, n2)))
-            edges.add((weight, node_pair))
+        for n2, weight in graph[n1]:
+            edges.add((weight, tuple(sorted((n1, n2)))))
     return sorted(list(edges))
 
 def build_new_tree(graph):
     edges = sorted_edge_weights(graph)
-    new_tree = defaultdict(lambda: [])
-    undirected_nodes = list(graph)
-    while undirected_nodes:
-       weight, (n1, n2) = edges.pop()
-       if n1 in undirected_nodes:
-           undirected_nodes.remove(n1)
-       if n2 in undirected_nodes:
-           undirected_nodes.remove(n2)
-       bisect.insort(new_tree[n1], (n2, weight))
-       bisect.insort(new_tree[n2], (n1, weight))
+    new_tree = defaultdict(list)
+    connected_nodes = set()
+    weight, (n1, n2) = edges.pop(0)
+    bisect.insort(new_tree[n1], (n2, weight))
+    bisect.insort(new_tree[n2], (n1, weight))
+    connected_nodes.add(n1) 
+    connected_nodes.add(n2)
 
+    while len(graph) > len(connected_nodes):
+        for i, edge in enumerate(edges):
+            weight, (n1, n2) = edge
+            if n1 not in connected_nodes and n2 not in connected_nodes:
+                continue
+            if n1 in connected_nodes and n2 in connected_nodes:
+                continue
+            connected_nodes.add(n1) 
+            connected_nodes.add(n2)
+            bisect.insort(new_tree[n1], (n2, weight))
+            bisect.insort(new_tree[n2], (n1, weight))
     return dict(new_tree)
 
 def question3(graph):
@@ -45,6 +51,7 @@ class TestQuestion3(unittest.TestCase):
 
     def test_graph_is_already_minimum_spanning_tree(self):
         tree = {'A': [('B', 2)],
+ 
                 'B': [('A', 2), ('C', 5)],
                 'C': [('B', 5)]}
         self.assertEqual(question3(tree), tree)
@@ -61,8 +68,6 @@ class TestQuestion3(unittest.TestCase):
                        'C': [('D', 1), ('E', 2)],
                        'D': [('B', 3), ('C', 1)],
                        'E': [('C', 2)]}
-
-        self.assertEqual(question3(input_tree),output_tree)
 
 if __name__ == '__main__':
     unittest.main()
