@@ -4,8 +4,6 @@ import unittest
 import math
 
 n = 10
-x2 = 2
-x1 = 1
 p = 0.12
 q = 0.88
 
