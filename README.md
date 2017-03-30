@@ -10,4 +10,6 @@ My studies fall under the following umbrellas:
 * inference/stats
 * complexity/network theory
 
-I am engaged in a multiple year nerd-up in these areas, as I move towards deeper service in machine intelligence.  This repo includes my course study notes, and literature reviews can be found on my [blog](http://www.siobhankcronin.com/blog/).
+I am engaged in a multiple year nerd-up in these areas, as I move towards deeper service in machine intelligence.  
+
+This repo includes my course study notes, and literature reviews can be found on my [blog](http://www.siobhankcronin.com/blog/).
