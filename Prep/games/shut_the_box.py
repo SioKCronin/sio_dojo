@@ -28,7 +28,7 @@ class Box():
         else:
             for i in range(len(tabs)):
                 temp_tabs = tabs[:i] + tabs[i+1:]
-                combos = combinations_exist(n, temp_tabs, combos)
+                combos = self.combinations_exist(n, temp_tabs, combos)
                 if combos == True:
                     break
 
