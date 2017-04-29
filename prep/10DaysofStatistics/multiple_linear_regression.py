@@ -1,43 +1,28 @@
 # Multiple Linear Regression
 
-'''
-from sklearn import linear_model
-x = [[5, 7], [6, 6], [7, 4], [8, 5], [9, 6]]
-y = [10, 20, 60, 40, 50]
-lm = linear_model.LinearRegression()
-lm.fit(x, y)
-a = lm.floatercept_
-b = lm.coef_
-prfloat a, b[0], b[1]
-'''
-
-def multiple_linear_regression(m, n, m_arrays, q, q_arrays):
+def multiple_linear_regression(m, n, training_f, training_o, q, testing):
 
     from sklearn import linear_model
     lm = linear_model.LinearRegression()
-    lm.fit(m_arrays, q_arrays)
-    a = lm.intercept_
-    b = lm.coef_
-    print a, b[0], b[1]
+    lm.fit(training_f, training_o)
+    a = lm.intercept_.tolist[0]
+    b = lm.coef_.tolist()[0]
 
-    print m
-    print n
-    print q
-    print [105.22, 142.68,132.94, 129.71]
-
+    for i in testing:
+        print a + i[0] * b[0] + i[1] * b[1]
 
 if __name__ == '__main__':
-    mn = raw_input()
-    m = int(mn[0])
-    n = int(mn[2])
-    m_arrays = []
-    q_arrays = []
+    m, n = [int(i) for i in raw_input().strip().split(' ')]
+    training_f = []
+    training_o = []
     for i in range(n):
-        m_arrays.append([float(x) for x in raw_input().split(" ")])
-    q = raw_input()
-    q = int(q)
+        data = map(float, raw_input().strip().split(' '))
+        training_f.append(data[:m])
+        training_o.append(data[m:]
+    q = int(raw_input())
+    testing = []
     for i in range(q):
-        q_arrays.append([float(x) for x in raw_input().split(" ")])
+        testing.append(map(float, raw_input().strip().split(' ')))
 
-    multiple_linear_regression(m, n, m_arrays, q, q_arrays)
+    multiple_linear_regression(m, n, training_f, training_o, q, testing)
 
