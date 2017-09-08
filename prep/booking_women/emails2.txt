@@ -1,0 +1,21 @@
+14
+store emai_l1 10
+store emai_l4 99
+store emai_l2 100
+store emai_l3 10
+store emai_l5 1000
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+get_next_email
+
+
+
+
+
+
