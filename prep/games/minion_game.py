@@ -28,7 +28,7 @@ def play(string):
         return 'Draw'
 
 def minion_game(string):
-    print play(string)
+    print(play(string))
 
 class TestQuestion6(unittest.TestCase):
     def test_banana(self):
