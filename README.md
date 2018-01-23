@@ -5,9 +5,9 @@
 I am engaged in a multiple year nerd-up in the following areas, as I move towards deeper service in computational intelligence and software engineering: 
 
 * computer science 
-* math (proofs, class notes)
-* inference (classical, Bayesian) 
-* ML/AI (supervised, Bayesian, reinforcement learning)
+* math (linear algebra, geometric analysis)
+* probability/inference
+* ML/AI 
 * soft computing (agent-based modeling, swarm intelligence) 
 * probabilistic/dynamic/stochastic programming
 * complexity/graph/network theory
