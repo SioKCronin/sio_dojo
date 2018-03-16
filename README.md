@@ -4,12 +4,13 @@
 
 I am engaged in a multiple year nerd-up in the following areas, as I move towards deeper service in software engineering and complex systems research: 
 
-* computer science (core)
+* CS/ML(core)
 * math
 * inference/probability/statistics
-* ML/AI (core)
 * reinforcement learning
 * swarm intelligence
-* complexity/graph/network theory
+* kinematics
+* active matter
+* complexity theory
 
 My study path and literature reviews are linked in the wiki.
