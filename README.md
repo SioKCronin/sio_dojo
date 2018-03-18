@@ -9,8 +9,5 @@ I am engaged in a multiple year foundations setting in the following areas, as I
 * inference/probability/statistics
 * reinforcement learning
 * swarm intelligence
-* kinematics
-* active matter
-* complexity theory
 
 My study path and literature reviews are linked in the wiki.
