@@ -40,31 +40,49 @@ def visited_twice(instructions):
         'W': (-1, 0)
     }
 
-    span = {
-        'N': (0, 0),
-        'S': (0, 0),
-        'E': (0, 0),
-        'W': (0, 0)
-    }
-
     coords = (0,0)
     current_direction = 'N'
-    historic_coords = []
+    historic_coords = [(0,0)]
     for instruction in instructions:
         current_direction = next_direction(current_direction, instruction[0])
-        coords = tuple(map(operator.add, coords,
+        new_coords = tuple(map(operator.add, coords,
             tuple([z * instruction[1] for z in dirs[current_direction]])))
-        y = tuple([z * instruction[1] for z in dirs[current_direction]])
-        #print(tuple([z * instruction[1] for z in dirs[current_direction]]))
-        print(coords)
-        if coords in historic_coords:
-            return abs(coords[0]) + abs(coords[1])
-        historic_coords.append(coords)
-        # It seems we should keep track of everywhere we've passed through
-        # If anything is in the span, then include it
-        # How do we keep track of intersections?
+        if current_direction == 'N':
+            for y in range(coords[1]+1, new_coords[1]+1):
+                if (coords[0], y) in historic_coords:
+                    print("Found it", (coords[0], y))
+                    return abs(coords[0]) + abs(y)
+                else:
+                    historic_coords.append((new_coords[0], y))
+            coords = new_coords
+        if current_direction == 'E':
+            for x in range(coords[0]+1, new_coords[0]+1):
+                if (x, coords[1]) in historic_coords:
+                    print("Found it", (x, coords[1]))
+                    return abs(x) + abs(coords[1])
+                else:
+                    historic_coords.append((x,new_coords[1]))
+            coords = new_coords
+        if current_direction == 'W':
+            for x in range(coords[0]-1, new_coords[0]-1, -1):
+                if (x, coords[1]) in historic_coords:
+                    print("Found it", (x, coords[1]))
+                    return abs(x) + abs(coords[1])
+                else:
+                    historic_coords.append((x,new_coords[1]))
+            coords = new_coords
+        if current_direction == 'S':
+            for y in range(coords[1]-1, new_coords[1]-1, -1):
+                if (coords[0], y) in historic_coords:
+                    print("Found it", (coords[0], y))
+                    return abs(coords[0]) + abs(y)
+                else:
+                    historic_coords.append((new_coords[0], y))
+            coords = new_coords
+        print(historic_coords)
 
 # print blocks_from_instructions([('R',2),('L',3)])
 # print blocks_from_instructions([('R', 2), ('R', 2), ('R', 2)])
 # print blocks_from_instructions(data)
+
 print(visited_twice(data))
