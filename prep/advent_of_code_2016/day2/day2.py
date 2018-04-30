@@ -39,8 +39,8 @@ table = [[ 1, 2, 3], [ 4, 5, 6], [ 7, 8, 9]]
 code = []
 
 for line in data:
-    for x in line:
-        y_id, x_id = index_increment(x, y_id, x_id)
+    for character in line:
+        y_id, x_id = index_increment(character, y_id, x_id)
     code.append(table[y_id][x_id])
 
 answer = ''.join(str(e) for e in code)
