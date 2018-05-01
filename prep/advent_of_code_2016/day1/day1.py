@@ -1,4 +1,4 @@
-# Day 1
+# Day 1 - 2016
 
 import numpy as np
 import operator
