@@ -32,10 +32,8 @@ for char in data:
     x_coord = x[idx]
     y_coord = y[idx]
     if m[x_coord][y_coord] == 0:
-        santa_x = x[0]
-        santa_y = y[0]
-        robo_x = x[1]
-        robo_y = y[1]
+        santa_x, santa_y  = x[0],y[0]
+        robo_x, robo_y  = x[1], y[1]
         m[santa_x][santa_y] = 1
         m[robo_x][robo_y] = 1
     toggle = not toggle

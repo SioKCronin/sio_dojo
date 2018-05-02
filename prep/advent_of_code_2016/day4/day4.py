@@ -23,8 +23,7 @@ for line in data:
     values = code[-3:]
     room_id = code[:-3]
     room_val = ''.join(str(e) for e in values)
-    counter = Counter(room_id).most_common()
-    a = sorted(counter, key=lambda item: (-item[1], item[0]))
+    a = sorted(Counter(room_id).most_common(), key=lambda item: (-item[1], item[0]))
     fixed2 = ''.join(str(e[0]) for e in a[:5])
     if fixed2 == checksum:
         sectorID_sum += int(room_val)
