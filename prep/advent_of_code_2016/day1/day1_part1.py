@@ -32,6 +32,20 @@ def blocks_from_instructions(instructions):
 with open('day1.txt') as f:
     data = transform_data(f.read())
 
+def check_N(coords, new_coords, historic_coords):
+    for y in range(coords[1]+1, new_coords[1]+1):
+        if (coords[0], y) in historic_coords:
+            return abs(coords[0]) + abs(y)
+        else:
+            historic_coords.append((new_coords[0], y))
+
+def check_E(coords, new_coords, historic_coords):
+    for x in range(coords[0]+1, new_coords[0]+1):
+        if (x, coords[1]) in historic_coords:
+            return abs(x) + abs(coords[1])
+        else:
+            historic_coords.append((x,new_coords[1]))
+
 def visited_twice(instructions):
     dirs = {
         'N': (0, 1),
@@ -48,41 +62,28 @@ def visited_twice(instructions):
         new_coords = tuple(map(operator.add, coords,
             tuple([z * instruction[1] for z in dirs[current_direction]])))
         if current_direction == 'N':
-            for y in range(coords[1]+1, new_coords[1]+1):
-                if (coords[0], y) in historic_coords:
-                    print("Found it", (coords[0], y))
-                    return abs(coords[0]) + abs(y)
-                else:
-                    historic_coords.append((new_coords[0], y))
+            check_N(coords, new_coords, historic_coords)
             coords = new_coords
         if current_direction == 'E':
-            for x in range(coords[0]+1, new_coords[0]+1):
-                if (x, coords[1]) in historic_coords:
-                    print("Found it", (x, coords[1]))
-                    return abs(x) + abs(coords[1])
-                else:
-                    historic_coords.append((x,new_coords[1]))
+            check_E(coords, new_coords, historic_coords)
             coords = new_coords
         if current_direction == 'W':
-            for x in range(coords[0]-1, new_coords[0]-1, -1):
-                if (x, coords[1]) in historic_coords:
-                    print("Found it", (x, coords[1]))
-                    return abs(x) + abs(coords[1])
-                else:
-                    historic_coords.append((x,new_coords[1]))
+            print("start WEST")
+            def check_W(coords, new_coords, historic_coords):
+                for x in range(coords[0]-1, new_coords[0]-1, -1):
+                    print(x, coords[1])
+                    if (x, coords[1]) in historic_coords:
+                        return abs(x) + abs(coords[1])
+                    else:
+                        historic_coords.append((x,new_coords[1]))
+            check_W(coords, new_coords, historic_coords)
             coords = new_coords
         if current_direction == 'S':
             for y in range(coords[1]-1, new_coords[1]-1, -1):
                 if (coords[0], y) in historic_coords:
-                    print("Found it", (coords[0], y))
                     return abs(coords[0]) + abs(y)
                 else:
                     historic_coords.append((new_coords[0], y))
             coords = new_coords
-        print(historic_coords)
-
-# print blocks_from_instructions([('R',2),('L',3)])
-# print blocks_from_instructions([('R', 2), ('R', 2), ('R', 2)])
-# print blocks_from_instructions(data)
 
 print(visited_twice(data))
