@@ -46,6 +46,18 @@ def check_E(coords, new_coords, historic_coords):
         else:
             historic_coords.append((x,new_coords[1]))
 
+def check_W(coords, new_coords, historic_coords):
+    print("Starting coords:", coords[0])
+    print("New coords:", new_coords[0])
+    for x in range(coords[0]-1, new_coords[0]-1, -1):
+        print("x", x)
+        print("Coords", coords)
+        if (x, coords[1]) in historic_coords:
+            print("Found it: ", abs(x) + abs(coords[1]))
+            exit()
+        else:
+            historic_coords.append((x,new_coords[1]))
+
 def visited_twice(instructions):
     dirs = {
         'N': (0, 1),
@@ -68,15 +80,16 @@ def visited_twice(instructions):
             check_E(coords, new_coords, historic_coords)
             coords = new_coords
         if current_direction == 'W':
-            print("start WEST")
-            def check_W(coords, new_coords, historic_coords):
-                for x in range(coords[0]-1, new_coords[0]-1, -1):
-                    print(x, coords[1])
-                    if (x, coords[1]) in historic_coords:
-                        return abs(x) + abs(coords[1])
-                    else:
-                        historic_coords.append((x,new_coords[1]))
-            check_W(coords, new_coords, historic_coords)
+            print("Starting coords:", coords[0])
+            print("New coords:", new_coords[0])
+            for x in range(coords[0]-1, new_coords[0]-1, -1):
+                print("x", x)
+                print("Coords", coords)
+                if (x, coords[1]) in historic_coords:
+                    return abs(x) + abs(coords[1])
+                else:
+                    historic_coords.append((x,new_coords[1]))
+                #check_W(coords, new_coords, historic_coords)
             coords = new_coords
         if current_direction == 'S':
             for y in range(coords[1]-1, new_coords[1]-1, -1):

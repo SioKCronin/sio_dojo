@@ -6,29 +6,31 @@ def transform_data(data):
 with open('day2.txt') as f:
     data = transform_data(f.read())
 
-def increment_idx(direction, y_id, x_id):
+def increment_idx(direction, coords):
+    coords = coords
     if direction == 'U':
-        if y_id == 0 or table[y_id-1][x_id] == 0:
-            y_id = y_id
+        if coords[0] == 0 or table[coords[0]-1][coords[1]] == 0:
+            pass
         else:
-            y_id += -1
+            coords[0] += -1
     if direction == 'D':
-        if y_id == 4 or table[y_id+1][x_id] == 0:
-            y_id = y_id
+        if coords[0] == 4 or table[coords[0]+1][coords[1]] == 0:
+            pass
         else:
-            y_id += 1
+            coords[0] += 1
     if direction == 'R':
-        if x_id == 4 or table[y_id][x_id+1] == 0:
-            x_id = x_id
+        if coords[1] == 4 or table[coords[0]][coords[1]+1] == 0:
+            pass
         else:
-            x_id += 1
+            coords[1] += 1
     if direction == 'L':
-        if x_id == 0 or table[y_id][x_id-1] == 0:
-            x_id = x_id
+        if coords[1] == 0 or table[coords[0]][coords[1]-1] == 0:
+            pass
         else:
-            x_id += -1
-    return y_id, x_id
+            coords[1] += -1
+    return coords
 
+coords = [2, 0]
 y_id = 2
 x_id = 0
 
@@ -41,8 +43,8 @@ code = []
 
 for line in data:
     for character in line:
-        y_id, x_id = increment_idx(character, y_id, x_id)
-    code.append(table[y_id][x_id])
+        coords = increment_idx(character, coords)
+    code.append(table[coords[0]][coords[1]])
 
 answer = ''.join(str(e) for e in code)
 
