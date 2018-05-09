@@ -1,5 +1,3 @@
-# Day 1 - 2015
-
 def transform_data(data):
     return [x for x in data.strip().split()]
 
