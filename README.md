@@ -2,13 +2,13 @@
 
 ![Einstein](https://cloud.githubusercontent.com/assets/19956669/22234758/84d5faae-e1af-11e6-8b9e-d5c65cc213b9.png)
 
-I am engaged in a multiple year nerd-up in the following areas, as I move towards deeper service in software engineering and ML/AI research: 
+This repo is where I keep track of my studies, code challenges, and musings in the following:
 
-* CS fundamentals
-* ML/AI fundamentals
+* computer science
+* ML/AI
 * multivariate calc/analysis/linear algebra
 * probability/statistics
 * reinforcement learning
 * swarm intelligence
 
-My study path and literature reviews are linked in the wiki.
+Wtudy path and literature reviews are linked in the wiki.
