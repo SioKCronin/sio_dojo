@@ -1,5 +1,6 @@
 # Day 3 - part2
 import pandas as pd
+from collections import deque
 
 def transform_data(data):
     return [int(x) for x in data.strip().split()]
@@ -15,10 +16,17 @@ sample_data = [[101, 301, 501],
                [202, 402, 602],
                [203, 403, 603]]
 
-df = pd.DataFrame(data=sample_data)
-iters = df.T.shape[1]
+df = pd.DataFrame(data=data)
+transposed = df.T
+rows = transposed.values.tolist()
+data = []
 
-# Just slice them off in threes and then move to the next column. Done.
+for row in rows:
+    while row:
+        one = row.pop(0)
+        two = row.pop(0)
+        three = row.pop(0)
+        data.append((one, two, three))
 
 count = 0
 

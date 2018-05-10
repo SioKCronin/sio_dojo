@@ -1,4 +1,4 @@
-# Day 4
+# Day 4 - part 1
 
 from collections import Counter
 
