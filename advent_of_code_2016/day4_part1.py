@@ -1,4 +1,4 @@
-# Day 4 - part 1
+# Day 4: Part 1
 
 from collections import Counter
 
@@ -23,9 +23,10 @@ for line in data:
     values = code[-3:]
     room_id = code[:-3]
     room_val = ''.join(str(e) for e in values)
-    a = sorted(Counter(room_id).most_common(), key=lambda item: (-item[1], item[0]))
-    fixed2 = ''.join(str(e[0]) for e in a[:5])
-    if fixed2 == checksum:
+    sorted_id = sorted(Counter(room_id).most_common(),
+                       key=lambda item: (-item[1], item[0]))
+    sorted_id = ''.join(str(e[0]) for e in sorted_id[:5])
+    if sorted_id == checksum:
         sectorID_sum += int(room_val)
 
 print(sectorID_sum)
