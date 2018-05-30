@@ -14,4 +14,4 @@ three.next = one
 
 one.value = 1
 
-print(x)
+print(x.value)
