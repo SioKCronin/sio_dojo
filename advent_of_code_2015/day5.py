@@ -43,7 +43,7 @@ def contains_doubles(s):
     return False
 
 def contains_forbidden_pairs(s):
-    pairs = [''.join(i) for i in list(zip(list(s), list(s)[1:]))]
+    pairs = [''.join(i) for i in zip(s, s[1:])]
 
     for pair in pairs:
         if pair in ['ab', 'cd', 'pq', 'xy']:
