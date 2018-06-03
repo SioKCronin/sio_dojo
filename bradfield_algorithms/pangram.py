@@ -28,7 +28,7 @@ char in the alphabet. At most, 26 pairs of chars will be evaluated with '=='.
 I thought I could get away with O(1) if I joined the sets as strings, but
 the equality comparison would still be over 26 chars, not the 1 string. 
 
-    Runtime: O(1 + 1 + 26) --> O(26)
+    Runtime: O(1 + 1 + 26) --> O(1)
     Space: O(1 + 1) --> O(1)
 """
 
@@ -45,8 +45,8 @@ I wanted to see if there was another way to break as soon as we knew two chars
 were different, which essentially just makes visible what is happening in the 
 set equality check of function 1.
 
-    Runtime: O(n + 26) --> O(n)
-    Space: O(1 + 1 + 1 + 1 + n) --> O(n)
+    Runtime: O(1 + 1 + 1 + 1 + 26) --> O(1)
+    Space: O(n + 26) --> O(n)
 
 """
 
@@ -64,8 +64,11 @@ def pangram2(s):
     return True
 
 """PANGRAM 3
-This exploits the symmetric_difference method of sets, which will evaluate
-as True if it contains an element, and False if it is the empty set. 
+I was curious if I could find any set methods that might be useful here. This
+function exploits the symmetric_difference method of sets, which will evaluate
+as True if it contains an element, and False if it is the empty set (which is
+what we want if the sets are equal). The problem, however, is that there may be
+up to n differences in the set before we evalute its truth value.
 
     Runtime: O(n + 26) --> O(n)
     Space: O(1 + 1) --> O(1)
