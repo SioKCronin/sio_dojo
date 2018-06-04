@@ -20,7 +20,22 @@ class TestPangrams(unittest.TestCase):
         self.assertFalse(pangram3(''))
         self.assertFalse(pangram3('a'))
 
-"""PANGRAM 1
+"""OVERVIEW
+
+1. Understand the Problem
+Unknown: Unique letters in test string
+Data: Test string
+Condition: Does test string contain one of every letter in alphabet?
+
+2. Devise a Plan
+I've used sets to keep track of unique elements before
+
+3. Carry out the plan (with tests to validate solutions)
+
+4. Check result
+
+PANGRAM 1
+
 I wanted to be able to compare my string to the chars in the alphabet, 
 so I decided to create a list of each. The choice of using set was motivated
 by a desire to remove duplicates, as I just needed to find at least one of each
