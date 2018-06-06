@@ -43,7 +43,7 @@ char in the alphabet. At most, 26 pairs of chars will be evaluated with '=='.
 I thought I could get away with O(1) if I joined the sets as strings, but
 the equality comparison would still be over 26 chars, not the 1 string. 
 
-    Runtime: O(1 + 1 + 26) --> O(1)
+    Runtime: O(1 + 1 + n) --> O(n)
     Space: O(1 + 1) --> O(1)
 """
 
