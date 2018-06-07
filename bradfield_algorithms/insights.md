@@ -1,8 +1,12 @@
-#General Strategy
+# General Strategy
 * What is the relationship between the problem and the sub-problem?
 * What are units of measurement for measuring system efficiency?
 * What patterns can you see in the mapping of input to output?
 * What is your brain computer doing in solving the problem?
+* RE: Analysis - it was super helpful to question how common operations like sorted()
+(which in Python uses Timsort, which is O(n log n) are implemented, as this
+is what we have track when compiling complexity for a function. This is a great 
+[quick reference](https://bradfieldcs.com/algos/analysis/performance-of-python-types/)
 
 # Coding insights
 
@@ -24,8 +28,7 @@ wasn't sure what was happening there
 
 ## Difference of Squares
 * This one was funny, because in writing up a list comprehension to make 
-sure I understood what was being asked, I solved the problem. I cheated
-but putting them right into the function, but it's the kind of problem I
-feel I understand well. 
+sure I understood what was being asked, I solved the problem. I jumped the gun,
+but it's a straightforward problem, so that's ok. 
 
 
