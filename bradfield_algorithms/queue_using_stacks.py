@@ -1,17 +1,37 @@
 import unittest
 
+class Stack(object):
+
+    def __init__(self):
+        self._items = []
+
+    def is_empty(self):
+        return not bool(self._items)
+
+    def push(self, item):
+        self._items.append(item)
+
+    def pop(self):
+        return self._items.pop()
+
+    def peek(self):
+        return self._items[-1]
+
+    def size(self):
+        return len(self._items)
+
 class QueueUsingStack():
 
     def __init__(self):
         # O(1)
-        self.queue = []
+        self.queue = Stack()
 
     def push(self, x):
         # O(1)
         return self.queue.append(x)
 
     def pop(self):
-        # O(1)
+        # O(n)
         return self.queue.pop(0)
 
     def peek(self):
