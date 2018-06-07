@@ -3,19 +3,24 @@ import unittest
 class QueueUsingStack():
 
     def __init__(self):
+        # O(1)
         self.queue = []
 
     def push(self, x):
+        # O(1)
         return self.queue.append(x)
 
     def pop(self):
+        # O(1)
         return self.queue.pop(0)
 
     def peek(self):
+        # O(1)
         return self.queue[0]
 
     def empty(self):
-        return self.queue == []
+        # O(1)
+        return not bool(self.queue)
 
 class TestQueueUsingStack(unittest.TestCase):
 

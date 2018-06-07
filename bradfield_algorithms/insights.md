@@ -1,8 +1,13 @@
-# General Strategy
+#General Strategy
 * What is the relationship between the problem and the sub-problem?
 * What are units of measurement for measuring system efficiency?
 * What patterns can you see in the mapping of input to output?
 * What is your brain computer doing in solving the problem?
+
+# Coding insights
+
+* Don't make a list if your just going to use an iterator once
+* If you're passing to a function like sum, why not just use [generator](http://book.pythontips.com/en/latest/generators.html)?
 
 # Specific problems
 
