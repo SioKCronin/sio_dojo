@@ -12,7 +12,7 @@ class Stack(object):
         self._items.append(item)
 
     def pop(self):
-        return self._items.pop()
+        return self._items.pop(0)
 
     def peek(self):
         return self._items[-1]
@@ -28,19 +28,19 @@ class QueueUsingStack():
 
     def push(self, x):
         # O(1)
-        return self.queue.append(x)
+        return self.queue.push(x)
 
     def pop(self):
         # O(n)
-        return self.queue.pop(0)
+        return self.queue.pop()
 
     def peek(self):
         # O(1)
-        return self.queue[0]
+        return self.queue.peek()
 
     def empty(self):
         # O(1)
-        return not bool(self.queue)
+        return self.queue.is_empty()
 
 class TestQueueUsingStack(unittest.TestCase):
 
