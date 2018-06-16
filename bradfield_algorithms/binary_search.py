@@ -34,14 +34,8 @@ def binary_search(sorted_list, target, start, end):
         else:
             return False
 
-    if length % 2 == 1:
+    if length >= 2:
         pivot = length // 2
-        if target >= sorted_list[pivot]:
-            return binary_search(sorted_list, target, pivot, None)
-        if target < sorted_list[pivot]:
-            return binary_search(sorted_list, target, None, pivot)
-    else:
-        pivot = int(length / 2)
         if target >= sorted_list[pivot]:
             return binary_search(sorted_list, target, pivot, None)
         if target < sorted_list[pivot]:
