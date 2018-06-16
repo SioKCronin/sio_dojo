@@ -1,58 +1,52 @@
 import math
+import unittest
 
 
-def binary_search(sorted_list, target):
+class TestBinarySearch(unittest.TestCase):
+    def test_contiguous_sorted(self):
+        self.assertFalse(binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 11, None, None))
+        self.assertTrue(binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, None, None))
 
+    def test_non_contiguous_sorted(self):
+        sorted_list2 = [1, 2, 5, 8, 10, 13]
+        binary_search(sorted_list2, 4, None, None)
+        self.assertFalse(binary_search([1, 2, 5, 8, 10, 13], 4, None, None))
+        self.assertTrue(binary_search([1, 2, 5, 8, 10, 13], 8, None, None))
+
+    def test_empty_list(self):
+        self.assertFalse(binary_search([], 4, None, None))
+
+    def test_all_same_number(self):
+        self.assertTrue(binary_search([4, 4, 4, 4], 4, None, None))
+
+
+def binary_search(sorted_list, target, start, end):
+
+    sorted_list = sorted_list[start:end]
     length = len(sorted_list)
 
     if length == 0:
-        print("Not here")
         return False
 
     if length == 1:
         if sorted_list[0] == target:
-            print("Found it!")
             return True
         else:
-            print("Not here")
-            return False
-
-    if length == 2:
-        if sorted_list[0] == target or sorted_list[1] == target:
-            print("Found it!")
-            return True
-        else:
-            print("Not here")
             return False
 
     if length % 2 == 1:
-        pivot = int(math.floor(length / 2))
+        pivot = length // 2
         if target >= sorted_list[pivot]:
-            return binary_search(sorted_list[pivot:], target)
+            return binary_search(sorted_list, target, pivot, None)
         if target < sorted_list[pivot]:
-            return binary_search(sorted_list[:pivot], target)
+            return binary_search(sorted_list, target, None, pivot)
     else:
         pivot = int(length / 2)
         if target >= sorted_list[pivot]:
-            return binary_search(sorted_list[pivot:], target)
+            return binary_search(sorted_list, target, pivot, None)
         if target < sorted_list[pivot]:
-            return binary_search(sorted_list[:pivot], target)
+            return binary_search(sorted_list, target, None, pivot)
+
 
 if __name__ == "__main__":
-    print("Test continguous sorted")
-    sorted_list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    binary_search(sorted_list1, 11)
-    #binary_search(sorted_list1, 4)
-    #binary_search(sorted_list1, 10)
-
-    print("Test non-continguous sorted")
-    sorted_list2 = [1, 2, 5, 8, 10, 13]
-    binary_search(sorted_list2, 4)
-
-    print("Empty list")
-    binary_search([], 4)
-
-    print("Test all same number")
-    binary_search([3, 3, 3, 3], 3)
-
-
+    unittest.main()
