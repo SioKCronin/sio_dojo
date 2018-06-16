@@ -1,8 +1,39 @@
 import unittest
 
-input_list = [3,9,20,'null','null',15,7]
+input_list = [3, 9, 20, None, None, 15, 7]
 
-real_input = [None if i == "null" else i for i in input_list]
+
+class TestMinDepth(unittest.TestCase):
+    def test_shorty(self):
+        s = Solution()
+        test = TreeNode(3)
+        self.assertEqual(s.minDepth(test), 1)
+        test.right = TreeNode(20)
+        self.assertEqual(s.minDepth(test), 1)
+        test.left = TreeNode(4)
+        self.assertEqual(s.minDepth(test), 2)
+
+    def test_simple_tree(self):
+
+        test = TreeNode(3)
+        test.left = TreeNode(9)
+        test.right = TreeNode(20)
+        test.right.left = TreeNode(15)
+        test.right.right = TreeNode(7)
+        s = Solution()
+        self.assertEqual(s.minDepth(test), 2)
+
+    def test_longer_tree(self):
+        test = TreeNode(3)
+        test.left = TreeNode(9)
+        test.right = TreeNode(20)
+        test.left.left = TreeNode(4)
+        test.left.right = TreeNode(5)
+        test.right.left = TreeNode(15)
+        test.right.right = TreeNode(7)
+        s = Solution()
+        self.assertEqual(s.minDepth(test), 3)
+
 
 class TreeNode(object):
     def __init__(self, x):
@@ -10,25 +41,14 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-l = []
 
 class Solution(object):
     def minDepth(self, root, depth=0):
-        if root:
-            self.minDepth(root.left, depth +1)
-            self.minDepth(root.right, depth +1)
-        else:
-            l.append(depth)
- 
-        return min(l)        preorder(tree.right)
+        if not root:
+            return depth
+        depth += 1
+        return min(self.minDepth(root.left, depth), self.minDepth(root.right, depth))
 
-test = TreeNode(real_input[0])
-test.left = TreeNode(real_input[1])
-test.right = TreeNode(real_input[2])
-test.left.left = TreeNode(real_input[3])
-test.left.right = TreeNode(real_input[4])
-test.right.left = TreeNode(real_input[5])
-test.right.right = TreeNode(real_input[6])
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
