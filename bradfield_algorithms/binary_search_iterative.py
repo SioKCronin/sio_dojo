@@ -21,6 +21,7 @@ class TestBinarySearchIterative(unittest.TestCase):
 def binary_search(sorted_list, target):
 
     length = len(sorted_list)
+    low = high = None
 
     while length > 0:
 
