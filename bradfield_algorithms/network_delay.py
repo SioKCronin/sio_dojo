@@ -20,7 +20,7 @@ def networkDelayTime(times, N, K):
     times: List[List[int]]
        travel times as directed edges 'times[i] = (u, v, w), where 'u' is the
        source, 'v' is the target, and 'w' is the time it takes for a signal
-       to travel from source to target. 
+       to travel from source to target.
     N: int
        number of network nodes
     K: int
@@ -31,8 +31,7 @@ def networkDelayTime(times, N, K):
     graph = build_graph(times, N)
 
     distances = {vertex: float('infinity') for vertex in graph}
-    # We keep track of edges, but start with a node?
-    distances[(K, 0)] = 0
+    distances[K] = 0
 
     tracker = set([i for i in range(N)])
     entry_lookup = {}
