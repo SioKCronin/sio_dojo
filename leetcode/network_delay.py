@@ -1,65 +1,25 @@
 import unittest
-import heapq
-
-def build_graph(times, N):
-    graph = {}
-
-    for entry in times:
-        if entry[0] in graph:
-            graph[entry[0]][entry[1]] = entry[2]
-        else:
-            graph[entry[0]] = {}
-            graph[entry[0]][entry[1]] = entry[2]
-
-    return graph
-
+import collections
 
 def networkDelayTime(times, N, K):
-    """
-    times: List[List[int]]
-       travel times as directed edges 'times[i] = (u, v, w), where 'u' is the
-       source, 'v' is the target, and 'w' is the time it takes for a signal
-       to travel from source to target.
-    N: int
-       number of network nodes
-    K: int
-       start node
-    rtype: int
-    """
+    graph = collections.defaultdict(list)
 
-    graph = build_graph(times, N)
+    for u, v, w in times:
+        graph[u].append((w, v))
 
-    distances = {vertex: float('infinity') for vertex in graph}
-    distances[K] = 0
+    print(graph)
 
-    #tracker = set([i for i in range(N)])
-    entry_lookup = {}
-    pq = []
+    distances = {node: float('infinity') for node in range(1, N+1)}
 
-    for vertex, length in graph.items():
-        entry = [length, vertex]
-        # This keeps track of how we got there?
-        entry_lookup[vertex] = entry
-        # Can't use heapq with dicts (can't evaluate them)
-        # This keeps our priority queue sorted
-        heapq.heappush(pq, entry)
+    def dfs(node, elapsed):
+        if elapsed >= distances[node]: return
+        distances[node] = elapsed
+        for time, neighbor in sorted(graph[node]):
+            dfs(neighbor, time + elapsed)
 
-    while len(pq) > 0:
-        current_distance, current_vertex = heapq.heappop(pq)
-
-        for neighbor, neighbor_length in graph[current_vertex].items():
-            distance = distances[current_vertex] + neighbor_length
-            if distance < distances[neighbor]:
-                distances[neighbor] = distance
-                # When do we check entry_lookup again?
-                # Is there where we set the path of the where the shortest
-                # distance came from?
-                # Where do put what we've already seen?
-                entry_lookup[neighbor][0] = distance
-
-    # We need some guard clause for checking that all Nodes were reached
-
-    return sum(distances.items())
+    dfs(K, 0)
+    ans = max(distances.values())
+    return ans if ans < float('inf') else -1
 
 class TestNetwork(unittest.TestCase):
 
