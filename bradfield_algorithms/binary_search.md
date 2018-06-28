@@ -1,3 +1,0 @@
-# Indices for list slicing
-
-
