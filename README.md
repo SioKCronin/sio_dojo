@@ -11,28 +11,28 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Dynamic Programming
 
-NetworkDelay
-MaxSubarray ([Py](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/max_subarray.py))
-HouseRobber1 (Py)
-HouseRobber2 (Py)
+* NetworkDelay
+* MaxSubarray
+* HouseRobber1 
+* HouseRobber2
 
 ### Recursion
 
-Hydrodyne
-TowerOfHanoi ([Py](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/tower_of_hanoi.py))
+* Hydrodyne
+* TowerOfHanoi
 
 ### Trees
 
-MinDepth
-PriorityQueueWithBinaryHeap
+* MinDepth
+* PriorityQueueWithBinaryHeap
 
 ### Graphs
 
 #### Paths and Circuits
 
-KnightsTour
-NQueens
-NumberOfIslands
+* KnightsTour
+* NQueens
+* NumberOfIslands
 
 #### Flows and Cuts
 
@@ -40,15 +40,15 @@ NumberOfIslands
 
 ### Search
 
-Search2DMatrix
-BinarySearch (slices) ([Py](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/binary_search_iterative.py))
-BinarySearch (indices) ([Py](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/binary_search_no_slicing.py))
+* Search2DMatrix
+* BinarySearch (slices)
+* BinarySearch (indices)
 
 ### Sort
 
 ### Number Theory
 
-Fibonnaci
+* Fibonnaci
 
 ### Combinatorics
 
@@ -60,8 +60,8 @@ Fibonnaci
 
 ### Formatting/Numerical Evaluation
 
-PerfectSquares
-Postfix
-Pangram ([Py](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/pangram.py))
-Anagram
-Palindrome
+* PerfectSquares
+* Postfix
+* Pangram
+* Anagram
+* Palindrome
