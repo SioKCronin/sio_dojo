@@ -16,15 +16,15 @@ def rob_two(l):
         return 0
     if len(l) <= 2:
         return max(l)
-    steal, skip = 0, 0
-    for x in l:
-        steal, skip = x + skip,  max(steal, skip)
-        print("Steal: ", steal)
-        print("Skip: ", skip)
-    x_steal, x_skip = l[0] + skip, max(steal, skip)
-    if x_steal > x_steal:
-        return skip
-    return steal
+
+    x_steal, x_skip = 0, 0
+    for x in l[:-1]:
+        x_steal, x_skip = x + x_skip,  max(x_steal, x_skip)
+
+    y_steal, y_skip = 0, 0
+    for y in l[1:]:
+        y_steal, y_skip = y + y_skip,  max(y_steal, y_skip)
+    return max(max(x_steal, x_skip), max(y_steal, y_skip))
 
 if __name__ == '__main__':
     unittest.main()
