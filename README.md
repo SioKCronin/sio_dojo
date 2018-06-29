@@ -4,11 +4,6 @@
 
 Algorithms, data structures, and vanquished code challenges organized by heuristic/problem type.
 
-| Language | Problems solved |
-| --- | --: |
-| Python | 18 |
-| C++ | 0 |
-
 ### Dynamic Programming
 
 * NetworkDelay
