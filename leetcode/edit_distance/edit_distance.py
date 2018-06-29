@@ -10,24 +10,33 @@ class TestEditDistance(unittest.TestCase):
 def edit_distance(x, y):
 
     n = max(len(x), len(y))
-    add = 0
-    mod = 0
-    rem = 0
+    memo = {}
 
-    def loop(x, y, add, mod, rem):
+    def loop(x, y):
+        if (not x) and (not y):
+            #print("Found empties")
+            return 0
+
         if (not x) or (not y):
-            return min(add + abs(len(x)-len(y)), mod, rem)
+            #print("Found one empty")
+            return abs(len(x)-len(y))
+
         if len(x) == 1 and len(y) == 1:
+            #print("Found single lists")
             if x == y:
-                return min(add, mod, rem)
-            return min(add, mod + 1, rem)
+                return 0
+            return 1
 
         for i in range(n-1):
-            add += 1 + loop(x[i:], y[i+1:], add, mod, rem)
-            mod += (x[0] != y[0]) + loop(x[i+1:], y[i+1:], add, mod, rem)
-            rem += 1 + loop(x[i+1:], y[i:], add, mod, rem)
+            add = 1 + loop(x[i:], y[i+1:])
+            mod = (x[0] != y[0]) + loop(x[i+1:], y[i+1:])
+            rem = 1 + loop(x[i+1:], y[i:])
+            #memo.append(min(add, mod, rem))
+            return min(add, mod, rem)
 
-    return loop(x, y, add, mod, rem)
+    return loop(x, y)
+    #loop(x, y)
+    #return sum(memo)
 
 if __name__ == '__main__':
     unittest.main()
