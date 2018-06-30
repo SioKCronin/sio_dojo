@@ -10,7 +10,7 @@ class TestEditDistance(unittest.TestCase):
 def edit_distance(x, y):
 
     n = max(len(x), len(y))
-    memo = {}
+    memo = []
 
     def loop(x, y):
         if (not x) and (not y):
