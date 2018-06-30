@@ -15,6 +15,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 * Hydrodyne
 * TowerOfHanoi
+* Edit Distance
 
 ### Trees
 
