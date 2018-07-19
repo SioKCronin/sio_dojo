@@ -19,7 +19,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Trees
 
-* MinDepth
+* MinDepthBinaryTree (BFS)
 * PriorityQueueWithBinaryHeap
 
 ### Graphs
