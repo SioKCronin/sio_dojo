@@ -42,17 +42,23 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Sort
 
+* Bubble Sort (n^2)
+* Insertion Sort (n^2)
+* Selection Sort (n^2)
+* Heap Sort (n log n)
+* Merge Sort (n log n)
+* Quick Sort (n log n)
+
 ### Number Theory
 
 * Fibonnaci
 
-### Combinatorics
+### Prob/Stats
 
-### Probability 
-
-### Game Theory
-
-### Geometry
+* Poisson distribution
+* Geometric distribution
+* Pearson correlation
+* Spearman rank correlation
 
 ### Formatting/Numerical Evaluation
 
