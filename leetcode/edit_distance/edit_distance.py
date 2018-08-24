@@ -10,19 +10,16 @@ class TestEditDistance(unittest.TestCase):
 def edit_distance(x, y):
 
     n = max(len(x), len(y))
-    memo = []
+    memo = {}
 
     def loop(x, y):
         if (not x) and (not y):
-            #print("Found empties")
             return 0
 
         if (not x) or (not y):
-            #print("Found one empty")
             return abs(len(x)-len(y))
 
         if len(x) == 1 and len(y) == 1:
-            #print("Found single lists")
             if x == y:
                 return 0
             return 1

@@ -14,7 +14,6 @@ class TestMinDepth(unittest.TestCase):
         self.assertEqual(s.minDepth(test), 2)
 
     def test_simple_tree(self):
-
         test = TreeNode(3)
         test.left = TreeNode(9)
         test.right = TreeNode(20)
