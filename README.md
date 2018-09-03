@@ -29,9 +29,11 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 #### BFS
 
-* MinDepthBinaryTree (BFS)
-
 #### DFS
+
+* MinDepthBinaryTree 
+* SameTree
+* PathSum
 
 #### Dijkstra/A*
 
