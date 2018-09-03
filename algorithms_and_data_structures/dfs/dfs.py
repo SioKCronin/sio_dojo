@@ -1,4 +1,4 @@
-# Exploring different BFS implementations with inspiration from
+# Exploring different DFS implementations with inspiration from
 # https://pythoninwonderland.wordpress.com/2017/03/18/how-to-implement-breadth-first-search-in-python/
 
 graph = {'A': ['B', 'C', 'E'],
@@ -16,7 +16,7 @@ def dfs(graph, start):
         vertex = stack.pop()
         if vertex not in visited:
             visited.add(vertex)
-            stack.stend(graph[vertex] - visited)
+            stack.append(graph[vertex] - visited)
     return visited
 
 dfs(graph, 'A')

@@ -29,17 +29,17 @@ def bfs_shortest_path(graph, start, goal):
     explored = []
     queue = [[start]]
 
-    if start = goal:
+    if start == goal:
         return "Found it!"
 
     while queue:
         path = queue.pop(0)
         node = path[-1]
         if node not in explored:
-            neigbors = graph[node]
+            neighbors = graph[node]
             for neighbor in neighbors:
                 new_path = list(path)
-                new_path.append(neigbhor)
+                new_path.append(neighbor)
                 queue.append(new_path)
                 if neighbor == goal:
                     return new_path
@@ -48,3 +48,5 @@ def bfs_shortest_path(graph, start, goal):
     return "No path connecting"
 
 bfs_shortest_path(graph, 'G', 'D')
+
+print("Min depth", min_depth(graph2, 'A'))

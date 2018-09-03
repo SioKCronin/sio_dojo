@@ -7,8 +7,6 @@ def query_reader(queries, n):
         if queries[i][0] = 1:
 
 
-
-
 def query_two
 
 # Import the data into a matrix

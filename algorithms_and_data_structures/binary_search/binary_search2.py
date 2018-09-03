@@ -16,8 +16,3 @@ def search(target, array):
             else:
 
         test_number = round(array/2)
-
-# Try recursive search 
-
-
-
