@@ -17,12 +17,9 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * TowerOfHanoi
 * Edit Distance
 
-### Trees
+### Search (Graphs & Trees)
 
-* MinDepthBinaryTree (BFS)
-* PriorityQueueWithBinaryHeap
-
-### Graphs
+* Search2DMatrix
 
 #### Paths and Circuits
 
@@ -30,15 +27,17 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * NQueens
 * NumberOfIslands
 
-#### Flows and Cuts
+#### BFS
 
-#### Directed graphs
+* MinDepthBinaryTree (BFS)
 
-### Search
+#### DFS
 
-* Search2DMatrix
+#### Binary trees/heaps
+
 * BinarySearch (slices)
 * BinarySearch (indices)
+* PriorityQueueWithBinaryHeap
 
 ### Sort
 
@@ -67,3 +66,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * Pangram
 * Anagram
 * Palindrome
+* Reverse word in string
+* Longest prefix
+* Word pattern
+* Intersection of two arrays
