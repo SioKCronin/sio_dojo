@@ -33,6 +33,8 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 #### DFS
 
+#### Dijkstra/A*
+
 #### Binary trees/heaps
 
 * BinarySearch (slices)
