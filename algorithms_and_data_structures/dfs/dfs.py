@@ -31,4 +31,4 @@ def dfs_paths(graph, start, goal):
             else:
                 stack.append((next, path + [next]))
 
-bfs_paths(graph, 'G', 'D')
+dfs_paths(graph, 'G', 'D')

@@ -8,7 +8,7 @@ class TestSameTree(unittest.TestCase):
         self.assertFalse(same_tree_checker([1,2,1], [1,1,2]))
 
 def same_tree_checker(tree1, tree2):
-    return True
+    return tree1 == tree2
 
 if __name__ == '__main__':
     unittest.main()
