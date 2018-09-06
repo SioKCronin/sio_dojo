@@ -31,6 +31,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 #### DFS
 
+* Course Schedule
 * MinDepthBinaryTree 
 * SameTree
 * PathSum
