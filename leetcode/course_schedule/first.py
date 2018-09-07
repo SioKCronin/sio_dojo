@@ -7,22 +7,25 @@ class TestCanFinish(unittest.TestCase):
         self.assertTrue(canFinish(2, [[0,1]]))
         self.assertFalse(canFinish(2, [[0,1], [1,0]]))
 
-def canFinish(numCourses, prerequisites):
-    # edge case
+def can_finish(numCourses, prerequisites):
+
+    # Guard clause
     if not prerequisites:
         return True
 
+    # Build the graph
     graph = collections.defaultdict(list)
     for course, pre_course in prerequisites:
         graph[pre_course].append(course)
     seen, in_stack = set(), set()
 
-    def circle(seen, in_stack, v):
+    # Define cycle
+    def cycle(seen, in_stack, v):
         seen.add(v)
         in_stack.add(v)
         for neighbor in graph[v]:
             if neighbor not in seen:
-                if circle(seen, in_stack, neighbor):
+                if cycle(seen, in_stack, neighbor):
                     return True
             else:
                 if neighbor in in_stack:
@@ -30,9 +33,10 @@ def canFinish(numCourses, prerequisites):
         in_stack.discard(v)
         return False
 
+    # Check all prereqs
     for i, j in prerequisites:
         if j not in seen:
-            if circle(seen, in_stack, j):
+            if cycle(seen, in_stack, j):
                 return False
     return len(seen) <= numCourses
 
