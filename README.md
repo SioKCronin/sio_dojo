@@ -76,3 +76,4 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * Longest prefix
 * Word pattern
 * Intersection of two arrays
+* Paired Symbols
