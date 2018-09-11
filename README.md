@@ -6,15 +6,16 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Dynamic Programming
 
-* NetworkDelay
-* MaxSubarray
-* HouseRobber1 
-* HouseRobber2
+* Network Delay
+* Max Subarray
+* House Robber 1 
+* House Robber 2
+* Coin Change
 
 ### Recursion
 
 * Hydrodyne
-* TowerOfHanoi
+* Tower Of Hanoi
 * Edit Distance
 
 ### Search (Graphs & Trees)
@@ -25,7 +26,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 * KnightsTour
 * NQueens
-* NumberOfIslands
+* Number Of Islands
 
 #### BFS
 
