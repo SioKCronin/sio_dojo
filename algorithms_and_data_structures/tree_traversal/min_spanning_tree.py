@@ -1,5 +1,3 @@
-# Question 3
-
 import unittest
 import pprint
 from collections import defaultdict
@@ -13,6 +11,27 @@ total weight of edges. Your function should take in and return an adjacency list
  'B': [('A', 2), ('C', 5)],
  'C': [('B', 5)]}
 '''
+class TestSpanningTree(unittest.TestCase):
+
+    def test_graph_is_already_minimum_spanning_tree(self):
+        tree = {'A': [('B', 2)],
+ 
+                'B': [('A', 2), ('C', 5)],
+                'C': [('B', 5)]}
+        self.assertEqual(question3(tree), tree)
+
+    def test_broad_tree(self):
+        input_tree = {'A': [('B', 2)],
+                      'B': [('A', 2), ('C', 5), ('D', 3)],
+                      'C': [('B', 5), ('D', 1), ('E', 2)],
+                      'D': [('B', 3), ('C', 1)],
+                      'E': [('C', 2)]}
+
+        output_tree = {'A': [('B', 2)],
+                       'B': [('A', 2), ('D', 3)],
+                       'C': [('D', 1), ('E', 2)],
+                       'D': [('B', 3), ('C', 1)],
+                       'E': [('C', 2)]}
 
 def sorted_edge_weights(graph):
     edges = set()
@@ -47,28 +66,5 @@ def build_new_tree(graph):
 def question3(graph):
     return build_new_tree(graph)
 
-class TestQuestion3(unittest.TestCase):
-
-    def test_graph_is_already_minimum_spanning_tree(self):
-        tree = {'A': [('B', 2)],
- 
-                'B': [('A', 2), ('C', 5)],
-                'C': [('B', 5)]}
-        self.assertEqual(question3(tree), tree)
-
-    def test_broad_tree(self):
-        input_tree = {'A': [('B', 2)],
-                      'B': [('A', 2), ('C', 5), ('D', 3)],
-                      'C': [('B', 5), ('D', 1), ('E', 2)],
-                      'D': [('B', 3), ('C', 1)],
-                      'E': [('C', 2)]}
-
-        output_tree = {'A': [('B', 2)],
-                       'B': [('A', 2), ('D', 3)],
-                       'C': [('D', 1), ('E', 2)],
-                       'D': [('B', 3), ('C', 1)],
-                       'E': [('C', 2)]}
-
 if __name__ == '__main__':
     unittest.main()
-

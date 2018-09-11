@@ -54,3 +54,5 @@ def postorder(root):
             s1.append(node.right)
     return reversed(s2)
 ```
+
+## Spanning tree
