@@ -45,7 +45,7 @@ def dfs_recursive(graph, vertex, path=[]):
 
     return path
     
-dfs_recursive(adjacency_matrix, 1
+dfs_recursive(adjacency_matrix, 1)
 ```
 
 ## Data structures
