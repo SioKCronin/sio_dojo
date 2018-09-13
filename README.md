@@ -11,6 +11,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * House Robber 1 
 * House Robber 2
 * Coin Change
+* Max Increasing Subsequence
 
 ### Recursion
 
