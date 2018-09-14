@@ -1,4 +1,5 @@
 import unittest
+import math
 
 class TestFibs(unittest.TestCase):
 
@@ -13,6 +14,13 @@ class TestFibs(unittest.TestCase):
 
     def test_fib_space_efficient(self):
         self.assertEqual(fib_space_efficient(3), 2)
+        self.assertEqual(fib_space_efficient(4), 3)
+        self.assertEqual(fib_space_efficient(5), 5)
+        self.assertEqual(fib_space_efficient(6), 8)
+
+    def test_chuck_fib(self):
+        self.assertEqual(chuck_fib(3), 2)
+        self.assertEqual(chuck_fib(4), 3)
 
 def fib_iter(n):
     if n <= 1:
@@ -49,6 +57,9 @@ def fib_space_efficient(n):
         back1 = next_val
 
     return(back1+back2)
+
+def chuck_fib(n):
+    return ((1 + math.pow(math.sqrt(5), n)) - (1 - math.pow(math.sqrt(5), n))) / (math.pow(2, n) * math.sqrt(5))
 
 if __name__ == '__main__':
     unittest.main()
