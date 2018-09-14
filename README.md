@@ -6,7 +6,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Dynamic Programming
 
-* Max Subarray
+* [Max Subarray](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/max_subarray)
 * Max Increasing Subsequence
 * House Robber 1 
 * House Robber 2
