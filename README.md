@@ -6,12 +6,11 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Dynamic Programming
 
-* Network Delay
 * Max Subarray
+* Max Increasing Subsequence
 * House Robber 1 
 * House Robber 2
-* Coin Change
-* Max Increasing Subsequence
+* Network Delay
 
 ### Recursion
 
