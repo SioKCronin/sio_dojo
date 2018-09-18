@@ -6,23 +6,22 @@ class TestLogestPalindromeSubstring(unittest.TestCase):
         self.assertEqual(longest_palindrome("babad"), "bab")
         self.assertEqual(longest_palindrome("cbbd"), "bb")
 
+def longest_palindrome(s, l, r):
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        l -= 1
+        r -= 1
+    return s[l:r+1]
+
 def longest_palindrome(s):
-    if len(s) == 0: return 0
-    if len(s) == 1: return 1
-    longest = ""
-    memo = [0]*len(s)
-    memo[0] = 1
+    longest = ''
+
     for i in range(len(s)):
-        sub_longest = ""
-        path = s[:i]
-        while path:
-            for j in range(1, len(s[:i])):
-                letter = path.pop()
-                if s[i+j] == letter: 
-                    print("Found it!")
-                    sub_longest = s[i-j:i+j+1]
-            if len(sub_longest) > len(longest):
-                longest = sub_longest
+        # handle the odd case 
+        odd = longest_palindrome(s, i, i)
+
+        # handle the even case
+        even = longest_palindrome(s, i, i+1)
+
 
 if __name__ == '__main__':
     unittest.main()
