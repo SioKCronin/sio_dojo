@@ -8,6 +8,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 * [Max Subarray](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/max_subarray)
 * [Longest Increasing Subsequence](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/longest_increasing_subsequence)
+* [Triangle](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/triangle)
 * House Robber 1 
 * House Robber 2
 * Network Delay
