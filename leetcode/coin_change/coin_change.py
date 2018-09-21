@@ -4,25 +4,25 @@ import time
 class TestCoinChange(unittest.TestCase):
 
     def test_leet1(self):
-        self.assertEqual(dp_coin_changer([1, 2, 5], 11, [0]*12), 3)
-        self.assertEqual(dp_coin_changer([2], 3, [0]*4), -1)
+        self.assertEqual(dp_coin_changer([1, 2, 5], 11, 2), 3)
+        self.assertEqual(dp_coin_changer([2], 3, 0), -1)
 
-def dp_coin_changer(coin_value_list, change, results):
-    min_coins = change
-    if change in coin_value_list:
-        results[change] = 1
-        return 1
-    elif results[change] > 0:
-        return results[change]
-    else:
-        for i in [c for c in coin_value_list if c <= change]:
-            num_coins = 1 + dp_coin_changer(coin_value_list, change-i, results)
-            if num_coins < min_coins:
-                min_coins = num_coins
-                results[change] = min_coins
-    if min_coins > len(coin_value_list):
+def dp_coin_changer(coin_value_list, change, i, memo=[]):
+    if i == -1:
         return -1
-    return min_coins
+
+    memo.append(coin_value_list[i])
+    s = round(sum(memo), 2)
+
+    if s < change:
+        return dp_coin_changer(coin_value_list, change, i, memo)
+
+    if s > change:
+        memo.pop()
+        i -= 1
+        return dp_coin_changer(coin_value_list, change, i, memo)
+
+    return len(memo)
 
 if __name__ == '__main__':
     unittest.main()
