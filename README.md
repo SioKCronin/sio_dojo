@@ -15,6 +15,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Recursion
 
+* [Letter Combos of a Phone Number](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/letter_combos_phone)
 * Hydrodyne
 * Tower Of Hanoi
 * Edit Distance
