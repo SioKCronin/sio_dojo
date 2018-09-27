@@ -24,6 +24,8 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 * Search2DMatrix
 
+#### Binary Trees
+
 #### Paths and Circuits
 
 * KnightsTour
