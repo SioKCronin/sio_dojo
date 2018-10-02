@@ -9,19 +9,24 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * [Max Subarray](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/max_subarray)
 * [Longest Increasing Subsequence](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/longest_increasing_subsequence)
 * [Triangle](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/triangle)
-* House Robber 1 
-* House Robber 2
-* Network Delay
+* [House Robber 1](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/house_robber/house_robber1.py) 
+* [House Robber 2](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/house_robber/house_robber2.py)
+* [Network Delay](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/network_delay/network_delay.py)
+* [Climbing Stairs](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/climbing_stairs/climbing_stairs.py)
 
 ### Recursion
 
-* Hydrodyne
-* Tower Of Hanoi
-* Edit Distance
+* [Letter Combos of a Phone Number](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/letter_combos_phone)
+* [Tower Of Hanoi](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/tower_of_hanoi/tower_of_hanoi.py)
+* [Edit Distance](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/edit_distance/edit_distance.py)
 
 ### Search (Graphs & Trees)
 
-* Search2DMatrix
+* [Search2DMatrix](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/search_2D_matrix/search_2d_matrix.py)
+
+#### Binary Trees
+
+* [Binary Search](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/binary_search/binary_search.py)
 
 #### Paths and Circuits
 

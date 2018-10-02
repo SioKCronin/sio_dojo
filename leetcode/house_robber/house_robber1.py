@@ -15,6 +15,3 @@ def rob(l):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
