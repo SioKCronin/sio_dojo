@@ -30,18 +30,20 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 #### Paths and Circuits
 
-* KnightsTour
-* NQueens
-* Number Of Islands
+* [Number Of Islands](https://github.com/SioKCronin/sio_dojo/tree/master/other/islands)
+
+#### Backtracking
+* [NQueens](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/n_queens/n_queens.py)
 
 #### BFS
 
 #### DFS
 
-* Course Schedule
+* [Course Schedule](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/course_schedule)
 * MinDepthBinaryTree 
 * SameTree
 * PathSum
+* GreaterTree
 
 #### Dijkstra/A*
 
