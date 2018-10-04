@@ -43,6 +43,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * MinDepthBinaryTree 
 * SameTree
 * PathSum
+* GreaterTree
 
 #### Dijkstra/A*
 
