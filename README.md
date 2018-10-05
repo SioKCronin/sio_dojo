@@ -35,9 +35,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 #### Backtracking
 * [NQueens](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/n_queens/n_queens.py)
 
-#### BFS
-
-#### DFS
+#### BFS & DFS
 
 * [Course Schedule](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/course_schedule)
 * MinDepthBinaryTree 
