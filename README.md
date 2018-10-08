@@ -59,7 +59,7 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 
 ### Formatting/Numerical Evaluation
 
-* PerfectSquares
+* [PerfectSquares](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/perfect_squares/perfect_squares.py)
 * Postfix
 * Pangram
 * Anagram
