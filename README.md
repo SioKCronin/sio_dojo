@@ -44,10 +44,14 @@ Algorithms, data structures, and vanquished code challenges organized by heurist
 * [Network Delay](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/network_delay/network_delay.py)
 * [Climbing Stairs](https://github.com/SioKCronin/sio_dojo/blob/master/leetcode/climbing_stairs/climbing_stairs.py)
 
-#### Binary trees/heaps
+### Binary trees/heaps
 
 * [Binary Search](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/binary_search)
 * [Binary Heap](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/binary_heap)
+
+### Two Pointers
+
+* [Valid Palindrome](https://github.com/SioKCronin/sio_dojo/tree/master/leetcode/valid_palindrome)
 
 ### Number Theory
 
