@@ -2,7 +2,7 @@
 
 ![Einstein](https://cloud.githubusercontent.com/assets/19956669/22234758/84d5faae-e1af-11e6-8b9e-d5c65cc213b9.png)
 
-Algorithms, data structures, and vanquished code challenges organized by heuristic/problem type.
+A bouquet of code challenges organized by heuristic/problem type.
 
 ### Recursion
 
