@@ -7,6 +7,13 @@ class TestLetterCombos(unittest.TestCase):
 
         self.assertEqual(letter_combos("23"),["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]) 
 
+def product(x, y):
+    output = []
+    for i in x:
+        for j in y:
+            output.append(i + j)
+    return output
+
 def letter_combos(s):
     letters = {'2': ['a', 'b', 'c'],
                '3': ['d', 'e', 'f'],
@@ -27,6 +34,8 @@ def letter_combos(s):
     memo = letters[s[:1]]
 
     return [x + y for x, y in itertools.product(memo, letter_combos(s[1:]))] 
+    # In case someone wants to see an itertools.product implementation
+    #return [x + y for x, y in product(memo, letter_combos(s[1:]))] 
 
 if __name__ == '__main__':
     unittest.main()
