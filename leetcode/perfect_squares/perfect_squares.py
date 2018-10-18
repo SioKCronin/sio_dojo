@@ -1,3 +1,10 @@
+'''
+Given a positive integer n, find the least number of perfect square numbers 
+(for example, 1, 4, 9, 16, ...) which sum to n.
+
+The brute force solution (running all permutations) below exceeds time limit. 
+How might we make it faster with BFS or DP?
+'''
 import unittest
 import itertools
 import collections

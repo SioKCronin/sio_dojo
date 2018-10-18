@@ -6,7 +6,7 @@ class TestLogestPalindromeSubstring(unittest.TestCase):
         self.assertEqual(longest_palindrome("babad"), "bab")
         self.assertEqual(longest_palindrome("cbbd"), "bb")
 
-def longest_palindrome(s, l, r):
+def helper(s, l, r):
     while l >= 0 and r < len(s) and s[l] == s[r]:
         l -= 1
         r -= 1
@@ -17,11 +17,17 @@ def longest_palindrome(s):
 
     for i in range(len(s)):
         # handle the odd case 
-        odd = longest_palindrome(s, i, i)
+        odd = helper(s, i, i)
 
         # handle the even case
-        even = longest_palindrome(s, i, i+1)
+        even = helper(s, i, i+1)
 
+        if len(odd) > len(longest):
+            longest = odd
+        if len(even) > len(longest):
+            longest = even
+
+    return longest
 
 if __name__ == '__main__':
     unittest.main()

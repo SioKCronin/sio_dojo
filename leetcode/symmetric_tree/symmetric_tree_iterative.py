@@ -4,7 +4,7 @@ class TestSymmetricTree(unittest.TestCase):
 
     def test_is_mirror(self):
         self.assertTrue(check_symmetry([1, 2, 2, 3, 4, 4, 3]))
-        self.assertFalse(check_symmetry([1, 2, 2, null, 3, null, 3]))
+        self.assertFalse(check_symmetry([1, 2, 2, None, 3, None, 3]))
 
 def check_symmetry(root):
     left_root = root
